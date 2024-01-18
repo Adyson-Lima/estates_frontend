@@ -22,6 +22,16 @@ export default function Estates(){
     }
   }
 
+  // delete, exclui um elemento na api
+  async function deleteEstate(id){
+    try {
+      await api.delete(`api/v1/estates/${id}`,{});
+      setEstates(my_estates.filter(estate => estate.id !== id));
+    } catch (error) {
+      alert('Erro ao excluir');      
+    }
+  }
+
   return(
 
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
@@ -55,7 +65,8 @@ export default function Estates(){
                     onClick={() => updateEstate(estate.id)}>Editar</button>
 
                     <button data-testid="mybtn2" type="button"
-                    className="btn btn-outline-danger">Excluir</button>
+                    className="btn btn-outline-danger" style={{margin: '2px'}}
+                    onClick={() => deleteEstate(estate.id)}>Excluir</button>
 
                   </td>
               </tr>
