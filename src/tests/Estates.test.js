@@ -20,4 +20,8 @@ describe('testes da tela Estates', () => {
     expect(screen.getByTestId('mylink')).toBeInTheDocument();
   });
 
+  it('Existe tabela em Estates?', () => {
+    expect(screen.getByTestId('mytable')).toBeInTheDocument();
+  });
+
 });
