@@ -13,6 +13,15 @@ export default function Estates(){
     .then(response => {setEstates(response.data)})
   }, []);
 
+  // update, navega para NewUpdate
+  async function updateEstate(id){
+    try {
+      navigate(`/newupdate/${id}`);
+    } catch (error) {
+      alert('Erro ao navegar');      
+    }
+  }
+
   return(
 
     <div data-testid="mycard" className="card border-primary" style={{marginTop: '20px'}} >
@@ -42,7 +51,8 @@ export default function Estates(){
                   <td>
 
                     <button data-testid="mybtn1" type="button"
-                    className="btn btn-outline-info">Editar</button>
+                    className="btn btn-outline-info" style={{margin: '2px'}}
+                    onClick={() => updateEstate(estate.id)}>Editar</button>
 
                     <button data-testid="mybtn2" type="button"
                     className="btn btn-outline-danger">Excluir</button>
