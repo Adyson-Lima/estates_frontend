@@ -24,4 +24,8 @@ describe('testes da tela Estates', () => {
     expect(screen.getByTestId('mytable')).toBeInTheDocument();
   });
 
+  it('Existe botão editar em Estates?', () => {
+    expect(screen.getByTestId('mybtn1')).toBeInTheDocument();
+  });
+
 });
