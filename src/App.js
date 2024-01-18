@@ -1,7 +1,8 @@
+import EstatesRouter from './routes';
 
 function App() {
   return (
-    <></>
+    <EstatesRouter/>
   );
 }
 
